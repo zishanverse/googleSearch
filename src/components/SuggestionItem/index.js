@@ -1,15 +1,13 @@
 import './index.css'
 
 const SuggestionItem = props => {
-  const {item, fun} = props
-
-  const {suggestion} = item
+  const {suggestion, fun} = props
 
   const changeInput = () => fun(suggestion)
 
   return (
-    <li>
-      <p className="para">{item}</p>
+    <li className="flex">
+      <p className="para">{suggestion}</p>
       <img
         src="https://assets.ccbp.in/frontend/react-js/diagonal-arrow-left-up.png"
         alt="arrow"

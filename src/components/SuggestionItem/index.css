@@ -1,1 +1,8 @@
-/* Write your CSS here */
+.arrow {
+  height: 17px;
+}
+.flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}

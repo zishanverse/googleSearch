@@ -2,10 +2,14 @@ import SuggestionItem from '../SuggestionItem/index'
 import './index.css'
 
 const GoogleSuggestions = props => {
-  const {suggestionsList, change, search, changeInput} = props
+  const {suggestionsList, change, search} = props
 
   const changeList = event => {
     change(event.target.value)
+  }
+
+  const changeInput = suggestion => {
+    change(suggestion)
   }
 
   return (
@@ -31,9 +35,14 @@ const GoogleSuggestions = props => {
               onChange={changeList}
             />
           </div>
-          <ul className="flex">
+
+          <ul className="list">
             {suggestionsList.map(each => (
-              <SuggestionItem item={each} key={each.id} fun={changeInput} />
+              <SuggestionItem
+                suggestion={each.suggestion}
+                key={each.id}
+                fun={changeInput}
+              />
             ))}
           </ul>
         </div>

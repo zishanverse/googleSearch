@@ -15,16 +15,11 @@ class App extends Component {
   state = {list: suggestionsList, searchInput: ''}
 
   changeList = value => {
-    const {list} = this.state
-    const updatedList = list.filter(each =>
-      each.suggestion.toLowerCase().includes(value),
+    const updatedList = suggestionsList.filter(each =>
+      each.suggestion.toLowerCase().includes(value.toLowerCase()),
     )
 
     this.setState({list: updatedList, searchInput: value})
-  }
-
-  changeSearch = value => {
-    this.setState({searchInput: value})
   }
 
   render() {
@@ -35,7 +30,6 @@ class App extends Component {
         suggestionsList={list}
         change={this.changeList}
         search={searchInput}
-        changeInput={this.changeSearch}
       />
     )
   }
